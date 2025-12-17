@@ -1,0 +1,321 @@
+/* --- CSS VARIABLES & RESET --- */
+:root {
+    --primary-blue: #003D7C;
+    --white: #ffffff;
+    --light-gray: #f4f6f9;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --border-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* REMOVED: padding-top from body (no longer fixed/sticky) */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- HEADER & NAV (STATIC POSITION - BLUE/WHITE) --- */
+header {
+    /* Revert to original blue background */
+    background-color: var(--primary-blue);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    
+    /* CRITICAL FIX: Header is now static (it scrolls with content) */
+    position: static; 
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* NAV element text color is now white */
+    color: var(--white); 
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    /* Revert to white */
+    color: var(--white); 
+}
+
+/* DESKTOP NAVIGATION LINKS */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    /* Revert to white */
+    color: var(--white); 
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--light-gray); 
+    font-weight: 700;
+}
+
+/* --- PAGE BANNER STYLES --- */
+.page-banner-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: var(--light-gray); 
+    margin-bottom: 2rem;
+    line-height: 0; 
+    display: block; 
+    position: static; 
+    /* REMOVED: All margin-top overlap fixes */
+}
+
+.page-banner-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    vertical-align: top; 
+}
+
+/* --- MAIN CONTENT CONTAINER --- */
+main {
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 10rem 2rem 3rem 2rem;
+    
+    /* REMOVED: Overlap fixes */
+    position: static;
+    margin-top: 0; 
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: #002a55;
+    transform: translateY(-2px);
+}
+
+/* --- HOME PAGE HERO --- */
+.home-hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.home-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.home-hero .intro {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* --- PROJECT CARDS (Grid) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: 1px solid var(--primary-blue);
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* --- EXPERIENCE LIST --- */
+.job-item {
+    border-left: 4px solid var(--primary-blue);
+    padding-left: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.job-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.job-date {
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* --- ARTICLE LIST --- */
+.article-item {
+    display: block;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.article-item:hover {
+    background-color: var(--light-gray);
+}
+
+.article-item h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+/* --- CONTACT --- */
+.contact-wrapper {
+    background-color: var(--light-gray);
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+/* --- MOBILE SPECIFIC STYLES --- */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    /* Revert to white */
+    color: var(--white); 
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    /* REMOVED: explicit height and body padding */
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        padding: 0 1.5rem;
+    }
+
+    .nav-links {
+        background-color: var(--white);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 65px; /* Slight adjustment for drop-down position */
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--light-gray);
+    }
+    
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links.open {
+        max-height: 300px;
+    }
+    
+    .nav-links a {
+        color: var(--text-dark);
+    }
+    .nav-links a:hover, .nav-links a.active {
+        color: var(--primary-blue);
+    }
+
+    /* Adjustments for content */
+    main {
+        padding-top: 0;
+    }
+
+    /* REMOVED: All overlap fixes for banner */
+    .page-banner-container {
+        margin-top: 0 !important; 
+        background-color: var(--light-gray); 
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | shihjen</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">shihjen</div>
+            
+            <div class="menu-toggle" id="menuToggle">☰</div> 
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html" class="active">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Get in Touch</h1>
+        <div class="contact-wrapper">
+            <p>I am currently open to new opportunities and collaborations.</p>
+            <br>
+            <p><strong>Email:</strong> test@example.com</p>
+            <p><strong>Location:</strong> Singapore, SG</p>
+            <br>
+            <a href="mailto:alex@example.com" class="btn">Send Me an Email</a>
+            <br><br>
+            <div style="margin-top: 2rem;">
+                <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Twitter</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 shihjen</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            menuToggle.addEventListener('click', function() {
+                // Toggles the 'open' class on the navigation links list
+                navLinks.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

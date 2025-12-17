@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details | shihjen</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">shihjen</div>
+            
+            <div class="menu-toggle" id="menuToggle">☰</div> 
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html" class="active">Home</a></li>
+                <li><a href="html/experience.html">Experience</a></li>
+                <li><a href="html/projects.html">Projects</a></li>
+                <li><a href="html/articles.html">Articles</a></li>
+                <li><a href="html/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="page-title">Loading...</h1>
+        <p id="page-date" style="color: grey; font-style: italic;"></p>
+        <hr style="margin: 1rem 0; border: 0; border-top: 1px solid #eee;">
+        <div id="page-content" style="line-height: 1.8;"></div>
+        
+        <a href="javascript:history.back()" class="btn" style="margin-top: 2rem;">&larr; Go Back</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 shihjen</p>
+    </footer>
+
+    <script src="../assets/data/data.js"></script>
+    <script>
+        // 1. Get the URL parameters (e.g., ?type=articles&id=1)
+        const urlParams = new URLSearchParams(window.location.search);
+        const type = urlParams.get('type'); // 'articles' or 'projects'
+        const id = parseInt(urlParams.get('id'));
+
+        // 2. Find the matching item in our database
+        const item = data[type].find(i => i.id === id);
+
+        // 3. Inject data into the HTML
+        if (item) {
+            document.getElementById('page-title').innerText = item.title;
+            document.getElementById('page-date').innerText = item.date || ""; // Projects might not have dates
+            document.getElementById('page-content').innerHTML = item.content;
+            document.title = item.title + " | Alex Data";
+        } else {
+            document.getElementById('page-title').innerText = "Content Not Found";
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            menuToggle.addEventListener('click', function() {
+                // Toggles the 'open' class on the navigation links list
+                navLinks.classList.toggle('open');
+            });
+        });
+    </script>
+
+</body>
+</html>

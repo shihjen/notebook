@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles | shihjen</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">shihjen</div>
+            
+            <div class="menu-toggle" id="menuToggle">☰</div> 
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="articles.html" class="active">Articles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Articles & Publications</h1>
+        
+        <div id="article-list-container">
+            </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 shihjen</p>
+    </footer>
+
+    <script src="../assets/data/data.js"></script>
+
+    <script>
+        // --- Navigation Toggle Script ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('open');
+            });
+        });
+        
+        // --- Article List Generation Script ---
+        const container = document.getElementById('article-list-container');
+        
+        // Ensure data.js is loaded and has the articles array
+        if (typeof data !== 'undefined' && data.articles) {
+            
+            // Loop through every article in your database
+            data.articles.forEach(article => {
+                const link = document.createElement('a');
+                link.className = 'article-item';
+                
+                // IMPORTANT: Link to a new DETAIL PAGE (e.g., article-detail.html) 
+                // passing the article's unique identifier (content_path) in the URL.
+                link.href = `article-detail.html?path=${article.content_path}`;
+                
+                link.innerHTML = `
+                    <h3>${article.title}</h3>
+                    <p style="color: var(--text-light); margin-bottom: 0.5rem; font-size: 0.95rem;">
+                        ${article.excerpt}...
+                    </p>
+                    <small>Published: ${article.date}</small>
+                `;
+                
+                container.appendChild(link);
+            });
+
+        } else {
+            container.innerHTML = "<p>Error: Could not load articles. Please check data.js</p>";
+        }
+    </script>
+</body>
+</html>

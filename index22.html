@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | shihjen</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">shihjen</div>
+            
+            <div class="menu-toggle" id="menuToggle">☰</div> 
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-banner-container">
+        <img src="1752941709250.jfif.jpg" alt="Data Analyst Banner Image">
+    </div>
+
+    <main class="home-hero">
+        <h1>Hi, I'm shihjen.</h1>
+        <p class="intro">
+            I am a Data Analyst specializing in Python, SQL, and Tableau. 
+            I translate complex datasets into clear, actionable business strategies.
+        </p>
+        <div class="cta-group">
+            <a href="projects.html" class="btn">View My Work</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 shihjen</p>
+
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            menuToggle.addEventListener('click', function() {
+                // Toggles the 'open' class on the navigation links list
+                navLinks.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
