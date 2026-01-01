@@ -20,7 +20,7 @@ const data = {
             id: 1,
             title: "Understanding SQL Window Functions",
             date: "Oct 12, 2023",
-            content_path: "../assets/content/test2.md"
+            content_path: "../assets/content/summary.md"
         },
         {
             id: 2,
