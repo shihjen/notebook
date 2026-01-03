@@ -312,7 +312,7 @@ footer {
     }
 
     .nav-links.open {
-        max-height: 300px;
+        max-height: 500px;
         padding: 1rem 0;         /* ✅ padding only when visible */
     }
 
