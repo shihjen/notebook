@@ -375,6 +375,15 @@ footer {
     color: var(--primary-blue);
 }
 
+.article-content h2::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: var(--border-color);
+    margin: 3rem 0 1.5rem;
+}
+
+
 .article-content h3 {
     font-size: 1.3rem;
     margin-top: 2rem;
@@ -398,6 +407,15 @@ footer {
 
 .article-content li {
     margin-bottom: 0.5rem;
+}
+
+.article-content li strong {
+    color: var(--text-dark);
+}
+
+.article-content ul,
+.article-content ol {
+    padding-left: 1.5rem;
 }
 
 /* Blockquotes (great for insights) */
@@ -447,3 +465,51 @@ footer {
         font-size: 2.2rem;
     }
 }
+
+/* ---- TOC ---- */
+.with-toc {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.article-toc {
+    position: sticky;
+    top: 120px;
+    min-width: 200px;
+    max-width: 240px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.article-toc h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.article-toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.article-toc li {
+    margin-bottom: 0.5rem;
+}
+
+.article-toc a {
+    color: var(--text-light);
+}
+
+.article-toc a:hover {
+    color: var(--primary-blue);
+}
+
+/* Hide TOC on mobile */
+@media (max-width: 1024px) {
+    .article-toc {
+        display: none;
+    }
+}
+
