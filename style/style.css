@@ -325,3 +325,111 @@ footer {
         font-size: clamp(2.2rem, 5vw, 3.5rem);
     }
 }
+
+
+
+/* ===============================
+   ARTICLE DETAIL (MARKDOWN)
+================================ */
+
+.article-detail {
+    display: flex;
+    justify-content: center;
+}
+
+.article-content {
+    max-width: 760px;          /* ideal reading width */
+    width: 100%;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    line-height: 1.8;
+}
+
+/* Title */
+.article-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-blue);
+    line-height: 1.2;
+}
+
+/* Section headings */
+.article-content h2 {
+    font-size: 1.9rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-blue);
+}
+
+.article-content h3 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+/* Paragraphs */
+.article-content p {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    margin-bottom: 1.25rem;
+}
+
+/* Lists */
+.article-content ul,
+.article-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Blockquotes (great for insights) */
+.article-content blockquote {
+    border-left: 4px solid var(--primary-blue);
+    background: var(--light-gray);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+}
+
+/* Horizontal rule */
+.article-content hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 3rem 0;
+}
+
+/* Images */
+.article-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+/* Code blocks */
+.article-content pre {
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 1.25rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+}
+
+.article-content code {
+    background: #f1f5f9;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+    .article-content h1 {
+        font-size: 2.2rem;
+    }
+}
