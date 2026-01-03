@@ -513,3 +513,75 @@ footer {
     }
 }
 
+
+/* ===============================
+   AI NEWS PAGE
+================================ */
+
+.page-intro {
+    max-width: 700px;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.news-card {
+    background: var(--light-gray);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+}
+
+.news-source {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.news-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+}
+
+.news-title a {
+    color: var(--text-dark);
+}
+
+.news-title a:hover {
+    color: var(--primary-blue);
+}
+
+.news-summary {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.news-readmore {
+    margin-top: auto;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
