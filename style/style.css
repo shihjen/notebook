@@ -220,17 +220,25 @@ p {
 /* --- ARTICLE LIST --- */
 .article-item {
     display: block;
-    padding: 1.5rem;
+    padding: 1.75rem 1.5rem;
     border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s, transform 0.2s;
 }
 
 .article-item:hover {
     background-color: var(--light-gray);
+    transform: translateX(4px);
 }
 
 .article-item h3 {
     color: var(--primary-blue);
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.article-item small {
+    color: var(--text-light);
+    font-size: 0.85rem;
 }
 
 /* --- CONTACT --- */
