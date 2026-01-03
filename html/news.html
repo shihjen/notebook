@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI News | shihjen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">twenty2</div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="ai-news.html" class="active">AI News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>AI News</h1>
+    <p class="page-intro">
+        Curated updates on AI, data, infrastructure, and emerging technologies.
+    </p>
+
+    <div id="news-container" class="news-grid"></div>
+</main>
+
+<footer>
+    <p>&copy; 2025 shihjen</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('news-container');
+
+    fetch('../assets/data/data.json')
+        .then(res => res.json())
+        .then(data => {
+
+            data.forEach(item => {
+                const card = document.createElement('article');
+                card.className = 'news-card';
+
+                const date = new Date(item.published_at).toLocaleDateString(
+                    'en-SG',
+                    { year: 'numeric', month: 'short', day: 'numeric' }
+                );
+
+                card.innerHTML = `
+                    <div class="news-meta">
+                        <span class="news-source">${item.source}</span>
+                        <span class="news-date">${date}</span>
+                    </div>
+
+                    <h3 class="news-title">
+                        <a href="${item.url}" target="_blank" rel="noopener">
+                            ${item.title}
+                        </a>
+                    </h3>
+
+                    <p class="news-summary">${item.summary}</p>
+
+                    <a class="news-readmore" href="${item.url}" target="_blank">
+                        Read full article →
+                    </a>
+                `;
+
+                container.appendChild(card);
+            });
+
+        })
+        .catch(err => {
+            container.innerHTML = '<p>Failed to load AI news.</p>';
+            console.error(err);
+        });
+
+    // Mobile nav
+    document.getElementById('menuToggle')
+        .addEventListener('click', () =>
+            document.getElementById('navLinks').classList.toggle('open')
+        );
+});
+</script>
+
+</body>
+</html>
