@@ -217,6 +217,12 @@ p {
     display: block;
 }
 
+.article-meta {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
 /* --- ARTICLE LIST --- */
 .article-item {
     display: block;
